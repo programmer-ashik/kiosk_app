@@ -7,7 +7,7 @@ function Slider({ sliderData }) {
     const width = Dimensions.get('window').width;
     console.log(sliderData);
     // Base URL of your server (change it accordingly)
-    const BASE_URL = "http://172.16.43.251/";
+    const BASE_URL = "http://192.168.1.102:3000";
 
     return (
         <View style={tw`flex flex-row`}>

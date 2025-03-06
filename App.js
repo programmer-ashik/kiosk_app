@@ -15,7 +15,7 @@ export default function App() {
   useEffect(() => {
     const fetchSliderData = async () => {
       try {
-        const response = await fetch("http://172.16.43.251:3000/api/slider_images"); // Use your actual API URL
+        const response = await fetch("http://192.168.1.102:3000/api/slider_images"); // Use your actual API URL
         const data = await response.json();
 
         if (data.success) {
@@ -36,7 +36,7 @@ export default function App() {
   }
 
   // Base URL for the images
-  const BASE_URL = "http://172.16.43.251:3000";
+  const BASE_URL = "http://192.168.1.102:3000";
 
   // Ensure image URLs are correctly formatted
   const formattedSliderImages = sliderData.sliderImages.map(imagePath => `${BASE_URL}/${imagePath}`);
@@ -44,29 +44,31 @@ export default function App() {
   return (
     <View style={tw`bg-white w-full`}>
       <View style={tw`w-full`}>
-        <View style={tw`flex flex-row justify-between items-center`}>
-          <Image
-            source={{ uri: `${BASE_URL}/${sliderData.headerImage.bdFlag}` }}
-            style={{
-              width: screenWidth * 0.4,
-              height: screenWidth * 0.3 * (28 / 40)
-            }}
-          />
-          <Image
-            source={{ uri: `${BASE_URL}/${sliderData.headerImage.cglogo}` }}
-            style={{
-              width: screenWidth * 0.2,
-              height: screenWidth * 0.3 * (28 / 40)
-            }} />
+        <View style={tw`flex flex-row justify-between items-center gap-4 `}>
           <Image
             source={{ uri: `${BASE_URL}/${sliderData.headerImage.cgFlag}` }}
             style={{
-              width: screenWidth * 0.4,
-              height: screenWidth * 0.3 * (28 / 40)
+              width: screenWidth * 0.40,
+              height: screenWidth * 0.3 * (28 / 46)
             }} />
+
+          <Image
+            source={{ uri: `${BASE_URL}/${sliderData.headerImage.cglogo}` }}
+            style={{
+              width: screenWidth * 0.28,
+              height: screenWidth * 0.3 * (28 / 46)
+            }}
+          />
+          <Image
+            source={{ uri: `${BASE_URL}/${sliderData.headerImage.bdFlag}` }}
+            style={{
+              width: screenWidth * 0.40,
+              height: screenWidth * 0.3 * (28 / 46)
+            }}
+          />
         </View>
 
-        <View style={tw`bg-blue-500`}>
+        <View style={tw`bg-blue-900 h-40 flex flex-col items-center justify-center`}>
           <Marquee data={sliderData.title} />
         </View>
 
@@ -85,8 +87,10 @@ export default function App() {
 
         <View style={tw`bg-black h-full w-full`}>
           <DateTime />
+
         </View>
       </View>
+
     </View>
   );
 }

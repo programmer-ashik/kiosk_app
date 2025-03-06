@@ -7,11 +7,11 @@ const VideoPlayer = ({ video }) => {
     const [status, setStatus] = useState({});
     const { width: screenWidth } = Dimensions.get('window');
     useEffect(() => {
-        // Optionally fetch status here
+
         (async () => {
             await Video.getStatusAsync();
         })();
-    }, [video]);
+    }, []);
 
     const handlePlaybackStatusUpdate = (status) => {
         setStatus(status);
@@ -22,15 +22,15 @@ const VideoPlayer = ({ video }) => {
             <Video
                 ref={videoRef}
                 style={{
-                    width: screenWidth, // Adjust width dynamically
-                    height: 250, // Set a fixed height
-                    alignSelf: 'center', // Center the video
+                    width: screenWidth * 1,
+                    height: screenWidth * .7
                 }}
-                source={{ uri: video }}  // Use the passed video URL here
+                // style={{ width: "100%", height: "100%", alignSelf: 'center' }}
+                source={{ uri: video }}
                 // useNativeControls
                 resizeMode="contain"
                 isLooping
-                isMuted={false}
+                isMuted={true}
                 shouldPlay
                 onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
             />
@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: "red",
+        backgroundColor: "blue",
     },
 });
 

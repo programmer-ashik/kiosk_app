@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 
 const DateTime = () => {
@@ -21,11 +21,9 @@ const DateTime = () => {
     return (
         <View style={tw`flex flex-row justify-between items-center mt-24 px-4`}>
             <Text style={tw`text-4xl font-bold text-white`}>Date: {formattedDate}</Text>
-            <Image
-                source={require('../assets/strip.png')}
-                style={tw`w-40 h-16`}
-            />
+
             <Text style={tw`text-4xl font-bold text-white`}>Time: {formattedTime}</Text>
+            {/* <Text style={tw`text-gray-50`}>Powerd by: Ashik Hasan</Text> */}
 
         </View>
     );

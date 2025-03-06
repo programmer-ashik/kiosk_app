@@ -15,7 +15,7 @@ export default function App() {
   useEffect(() => {
     const fetchSliderData = async () => {
       try {
-        const response = await fetch("http://192.168.0.114:3000/api/slider_images"); // Use your actual API URL
+        const response = await fetch("http://172.16.43.251:3000/api/slider_images"); // Use your actual API URL
         const data = await response.json();
 
         if (data.success) {
@@ -29,14 +29,14 @@ export default function App() {
     };
 
     fetchSliderData();
-  }, [sliderData]);
+  }, []);
 
   if (isLoading || !sliderData) {
     return <Loader />;
   }
 
   // Base URL for the images
-  const BASE_URL = "http://192.168.0.114:3000";
+  const BASE_URL = "http://172.16.43.251:3000";
 
   // Ensure image URLs are correctly formatted
   const formattedSliderImages = sliderData.sliderImages.map(imagePath => `${BASE_URL}/${imagePath}`);
@@ -57,15 +57,13 @@ export default function App() {
             style={{
               width: screenWidth * 0.2,
               height: screenWidth * 0.3 * (28 / 40)
-            }}
-          />
+            }} />
           <Image
             source={{ uri: `${BASE_URL}/${sliderData.headerImage.cgFlag}` }}
             style={{
               width: screenWidth * 0.4,
               height: screenWidth * 0.3 * (28 / 40)
-            }}
-          />
+            }} />
         </View>
 
         <View style={tw`bg-blue-500`}>

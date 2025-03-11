@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import AutoScrolling from 'react-native-auto-scrolling';
-import tw from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 
 const Marquee = ({ data }) => {
     return (

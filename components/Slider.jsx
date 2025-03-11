@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Dimensions, Image, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import tw from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
+// import tw from 'twrnc';
 
 function Slider({ sliderData }) {
     const width = Dimensions.get('window').width;
     console.log(sliderData);
     // Base URL of your server (change it accordingly)
-    const BASE_URL = "http://192.168.1.102:3000";
+    const BASE_URL = "http://103.107.184.80:3000";
 
     return (
         <View style={tw`flex flex-row`}>

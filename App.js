@@ -1,6 +1,7 @@
+globalThis.ReadableStream = require('web-streams-polyfill').ReadableStream;
 import { useEffect, useState } from 'react';
 import { Dimensions, Image, View } from 'react-native';
-import tw from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import DateTime from './components/DateTime';
 import Loader from './components/Loader';
 import Marquee from './components/Marquee';
@@ -15,7 +16,7 @@ export default function App() {
   useEffect(() => {
     const fetchSliderData = async () => {
       try {
-        const response = await fetch("http://192.168.1.102:3000/api/slider_images"); // Use your actual API URL
+        const response = await fetch("http://103.107.184.80:3000/api/slider_images"); // Use your actual API URL
         const data = await response.json();
 
         if (data.success) {
@@ -36,7 +37,7 @@ export default function App() {
   }
 
   // Base URL for the images
-  const BASE_URL = "http://192.168.1.102:3000";
+  const BASE_URL = "http://103.107.184.80:3000";
 
   // Ensure image URLs are correctly formatted
   const formattedSliderImages = sliderData.sliderImages.map(imagePath => `${BASE_URL}/${imagePath}`);

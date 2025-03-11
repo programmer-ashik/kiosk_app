@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-import tw from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 
 const DateTime = () => {
     const [currentTime, setCurrentTime] = useState(new Date());

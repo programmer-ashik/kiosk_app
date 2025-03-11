@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "kioskApp",
-    "slug": "kioskApp",
+    "slug": "kioskapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
@@ -36,8 +36,12 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "c2b46b91-6a8f-4baf-b79b-66f63474a4ce"
+        "projectId": "cdea34e8-0203-4884-affc-0cffbe4717af"
       }
-    }
+    },
+    "owner": "ashik998"
+  },
+  "cli": {
+    "appVersionSource": "version"
   }
 }

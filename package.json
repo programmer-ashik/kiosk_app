@@ -9,19 +9,43 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^52.0.0",
-    "expo-av": "~15.0.1",
-    "expo-status-bar": "~2.0.0",
+    "16": "^0.0.2",
+    "@babel/plugin-transform-class-properties": "^7.25.9",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.26.6",
+    "@babel/plugin-transform-optional-chaining": "^7.25.9",
+    "@xmldom/xmldom": "^0.9.8",
+    "expo": "~52.0.36",
+    "expo-av": "~15.0.2",
+    "expo-doctor": "^1.12.7",
+    "expo-status-bar": "~2.0.1",
+    "expo-video": "~2.0.3",
+    "glob": "^11.0.1",
+    "lru-cache": "^11.0.2",
+    "metro": "^0.81.0",
+    "metro-core": "^0.81.0",
+    "metro-resolver": "^0.81.3",
     "react": "18.3.1",
-    "react-native": "0.76.5",
+    "react-native": "^0.76.7",
     "react-native-auto-scrolling": "^3.0.2",
-    "react-native-marquee": "^0.5.0",
+    "react-native-reanimated": "^3.16.1",
     "react-native-reanimated-carousel": "^3.5.1",
-    "tailwind-react-native-classnames": "^1.5.1",
-    "expo-video": "~2.0.3"
+    "rimraf": "^6.0.1",
+    "source-map-resolve": "^0.6.0",
+    "twrnc": "^4.6.1",
+    "undici": "^7.4.0",
+    "web-streams-polyfill": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@babel/plugin-transform-private-methods": "^7.25.9",
+    "@react-native-community/cli": "latest"
   },
-  "private": true
+  "private": true,
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "enabled": false
+      }
+    }
+  }
 }
